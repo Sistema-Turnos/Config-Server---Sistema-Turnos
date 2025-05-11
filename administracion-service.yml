@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://postgres-administracion:5432/administracion_db
+    username: administracion_user
+    password: administracion_pass
+
+server:
+  port: 8085
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-service:8761/eureka
