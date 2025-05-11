@@ -1,13 +1,20 @@
+server:
+  port: 0  # Que el puerto sea aleatorio si usás balanceador
+
 spring:
   datasource:
-    url: jdbc:postgresql://postgres-administracion:5432/administracion_db
-    username: administracion_user
-    password: administracion_pass
+    url: jdbc:postgresql://postgres_administracion:5432/administraciondb
+    username: admin_user
+    password: admin_pass
+    driver-class-name: org.postgresql.Driver
 
-server:
-  port: 8085
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
 
 eureka:
   client:
     service-url:
-      defaultZone: http://eureka-service:8761/eureka
+      defaultZone: http://eureka-service:8761/eureka/
